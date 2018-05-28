@@ -7,14 +7,14 @@ package chatroomserver;
 
 import java.io.*;
 import java.net.*;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+//import java.awt.*;
+//import java.awt.event.*;
+//import javax.swing.*;
 
-public class Server extends JFrame {
+public class Server  {
 	
-	private JTextField userText;
-	private JTextArea chatWindow;
+//	private JTextField userText;
+//	private JTextArea chatWindow;
 	private ObjectOutputStream output;
 	private ObjectInputStream input;
 	private ServerSocket server;
@@ -22,22 +22,22 @@ public class Server extends JFrame {
 	
 	//constructor
 	public Server(){
-		super("Buckys Instant Messenger");
-		userText = new JTextField();
-		userText.setEditable(false);
-		userText.addActionListener(
-			new ActionListener(){
-				public void actionPerformed(ActionEvent event){
-					sendMessage(event.getActionCommand());
-					userText.setText("");
-				}
-			}
-		);
-		add(userText, BorderLayout.NORTH);
-		chatWindow = new JTextArea();
-		add(new JScrollPane(chatWindow));
-		setSize(300, 150); //Sets the window size
-		setVisible(true);
+		//super("Buckys Instant Messenger");
+		//userText = new JTextField();
+		//userText.setEditable(false);
+//		userText.addActionListener(
+//			new ActionListener(){
+//				public void actionPerformed(ActionEvent event){
+//					sendMessage(event.getActionCommand());
+//					userText.setText("");
+//				}
+//			}
+//		);
+//		add(userText, BorderLayout.NORTH);
+//		chatWindow = new JTextArea();
+//		add(new JScrollPane(chatWindow));
+//		setSize(300, 150); //Sets the window size
+//		setVisible(true);
 	}
 	
 	public void startRunning(){
@@ -110,28 +110,28 @@ public class Server extends JFrame {
 			output.flush();
 			showMessage("\nSERVER -" + message);
 		}catch(IOException ioException){
-			chatWindow.append("\n ERROR: CANNOT SEND MESSAGE, PLEASE RETRY");
+			//chatWindow.append("\n ERROR: CANNOT SEND MESSAGE, PLEASE RETRY");
 		}
 	}
 	
 	//update chatWindow
 	private void showMessage(final String text){
-		SwingUtilities.invokeLater(
-			new Runnable(){
-				public void run(){
-					chatWindow.append(text);
-				}
-			}
-		);
+//		SwingUtilities.invokeLater(
+//			new Runnable(){
+//				public void run(){
+//					//chatWindow.append(text);
+//				}
+//			}
+//		);
 	}
 	
 	private void ableToType(final boolean tof){
-		SwingUtilities.invokeLater(
-			new Runnable(){
-				public void run(){
-					userText.setEditable(tof);
-				}
-			}
-		);
+//		SwingUtilities.invokeLater(
+//			new Runnable(){
+//				public void run(){
+//					//userText.setEditable(tof);
+//				}
+//			}
+//		);
 	}
 }
