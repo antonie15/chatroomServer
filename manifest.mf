@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+X-COMMENT: com.mycompany.mavenproject2.ServerTest
+
